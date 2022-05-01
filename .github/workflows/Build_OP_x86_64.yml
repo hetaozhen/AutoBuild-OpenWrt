@@ -79,7 +79,7 @@ jobs:
         echo 'src-git opluci https://github.com/openwrt/luci.git' >> ./feeds.conf.default
         ./scripts/feeds update opluci
         ./scripts/feeds install -p opluci luci-app-acme
-        ./scripts/feeds install -p opluci luci-i18n-acme-zh-cn
+        ./scripts/feeds install -p opluci luci-i18n-acme-zh_cn
 
 
     #- name: Import external feeds - passwall
@@ -107,7 +107,8 @@ jobs:
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
+        make download -j$(nproc)
+        
     - name: Build firmware
       working-directory: ./openwrt
       run: |
