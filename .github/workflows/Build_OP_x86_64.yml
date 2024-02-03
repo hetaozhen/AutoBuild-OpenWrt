@@ -60,7 +60,7 @@ jobs:
         echo "src-git kenzo https://github.com/kenzok8/openwrt-packages.git" >> ./feeds.conf.default
         echo "src-git small https://github.com/kenzok8/small.git" >> ./feeds.conf.default
         echo 'src-git dockerman https://github.com/lisaac/luci-app-dockerman.git' >> ./feeds.conf.default
-        echo 'src-git diskman https://github.com/lisaac/luci-app-diskman.git >> ./feeds.conf.default
+        echo 'src-git diskman https://github.com/lisaac/luci-app-diskman.git' >> ./feeds.conf.default
 
     - name: Update & Install feeds
       working-directory: ./openwrt
