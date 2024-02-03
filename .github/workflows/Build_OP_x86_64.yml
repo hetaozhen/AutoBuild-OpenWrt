@@ -67,8 +67,9 @@ jobs:
         echo 'src-git diskman https://github.com/lisaac/luci-app-diskman.git' >> ./feeds.conf.default
     - name: Check Space
       run: |
+        pwd
         df -hl
-    
+        du
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
