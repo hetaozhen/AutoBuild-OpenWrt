@@ -69,6 +69,7 @@ jobs:
       run: |
         pwd
         df -hl
+        df -h ./
         du
     - name: Update & Install feeds
       working-directory: ./openwrt
