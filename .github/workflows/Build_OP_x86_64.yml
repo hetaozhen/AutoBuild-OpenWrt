@@ -59,7 +59,8 @@ jobs:
         # echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
         echo "src-git kenzo https://github.com/kenzok8/openwrt-packages.git" >> ./feeds.conf.default
         echo "src-git small https://github.com/kenzok8/small.git" >> ./feeds.conf.default
-        #echo "src-git dockerman https://github.com/lisaac/luci-app-dockerman.git" >> ./feeds.conf.default
+        echo 'src-git dockerman https://github.com/lisaac/luci-app-dockerman.git' >> ./feeds.conf.default
+        echo 'src-git diskman https://github.com/lisaac/luci-app-diskman.git >> ./feeds.conf.default
 
     - name: Update & Install feeds
       working-directory: ./openwrt
@@ -67,11 +68,6 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-        echo 'src-git opluci https://github.com/openwrt/luci.git' >> ./feeds.conf.default
-        ./scripts/feeds update opluci
-        ./scripts/feeds install -p opluci luci-app-acme
-        ./scripts/feeds install -p opluci luci-i18n-acme-zh-cn
-
 
     #- name: Import external feeds - passwall
     #  working-directory: ./openwrt
